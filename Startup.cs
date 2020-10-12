@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ExampleAPI.Installers;
 using SwaggerOptions =ExampleAPI.Options.SwaggerOptions;
+using ExampleAPI.Helpers;
 
 namespace ExampleAPI
 {
@@ -63,6 +64,8 @@ namespace ExampleAPI
             });
 
             app.UseMvc();
+
+            app.UseXpoDemoData();
 
         }
     }

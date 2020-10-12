@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using ExampleAPI.Models.ExampleXPOModel;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -14,16 +15,17 @@ namespace ExampleAPI.Installers
 
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
-           // services.AddDxSampleModelJsonOptions();
+            // services.AddDxSampleModelJsonOptions();
 
             services
                 .AddXpoDefaultUnitOfWork(true, options => options
-                    .UseConnectionString(configuration.GetConnectionString("InMemoryDataStore"))
+                .UseConnectionString(configuration.GetConnectionString("InMemoryDataStore"))
                 .UseThreadSafeDataLayer(true)
                 .UseConnectionPool(false) // Remove this line if you use a database server like SQL Server, Oracle, PostgreSql, etc.                    
                 .UseAutoCreationOption(DevExpress.Xpo.DB.AutoCreateOption.DatabaseAndSchema) // Remove this line if the database already exists
-                .UseEntityTypes() // Pass all of your persistent object types to this method.
-            );
+                .UseEntityTypes(typeof(ExampleObject))); // Pass all of your persistent object types to this method.
+
+
         }
     }
 }

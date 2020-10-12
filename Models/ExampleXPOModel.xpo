@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="83d06b6a-0162-4ef6-901d-6803ab5f5dad" namespace="ExampleAPI.Models.ExampleXPOModel" dataBaseShemaInfo="H4sIAAAAAAAEAMWVXW+bMBSG7yftP6Bcx2CD+aoI1Zq0VbWuq/ox7dbYh4QNTIRNkv37mYTSJm33oV70jvOc98jntY9NcrypSmsFjSpqORkRG4+O048fkhOm4FbXDZvDhcxry6ikOtqoYjJaaL08cpz1em2vPbtu5o6LMXG+f7m85QuoGCqk0kxyGA1V4u9VI7OqZSV3LCtBdUtu4wfyBDygK1ZBerph1bKEr9kP4DpxHhOD9lR2LNVNC4nTB0NyVqgO3C8F05DmrFRGtA8H7XlbiAuRujnLGOUZEpgQRAULUURiH3k4iGlMAt/NROL04qF4WpdtJdWejVexSXQedsn0rGiU7uLEeUL31H/y+L8+n3rNcBCxeGsujhElIUHM4wIJgXMRMYgF4c+8mnLnDXYv2Xu5pR4A5YQi7Houon7EUZYHxi3nEIR+4OX0+cm+0e31opbvYNX1wzDjJDIn6XuIhq6PojCPUZxnMaM0iHyO/9nqS7S/igPp40dJ0j0uIK6bmm+h5ezwt91LlM5gdbpZNqCUPWOa2SsX22Rs9elJF9mhjcfWtC1128BEQqsbVo6t6zYrC/4Zft3VP0FOsigSJPSpCDEGGrPEeVhiu960ZEqB6g7gph12N/kkTGuQF5u+rx26bfM9dANVvYJD4Y4eaqfmQU3vJV8wOQczR9t4tzUv9ZCYnVlCo4t37u2VNpJzkNCY8ZrWVQVSq35Gn+E98QxUMTefZ4UZhYOK/dy27Koty25qTmDBVkXdmKHImTluc18OM+aP5Rz8stLfB9bOZdsGAAA=" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" useNameOf="true" createdInVersion="20.1.7.0" generateJsonSerializationContractResolver="false" generateServiceCollectionExtensions="false" lastModifiedInVersion="20.1.7.0" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+  <classes>
+    <dataBaseObjectModelHasClasses Id="16359a94-ea2c-417a-a419-b35bc66d5f35">
+      <xpObject Id="2faba4cb-d011-4da7-8195-3069491652bd" name="ExampleObject" baseClass="XPObject" userFileName="ExampleObject" designerFileName="ExampleObject.Designer" className="ExampleObject" virtualName="ExampleObject">
+        <fields>
+          <generalXpObjectHasFields Id="0d753f3a-04b3-4a96-b5a9-0e8aee81162a">
+            <field Id="b068a995-3099-4171-a3cd-dd0fd8ae9d1c" name="FirstName" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="1373ea6b-f4b4-4e15-a796-429f6a8a9ca1">
+            <field Id="43ee4c14-0232-458c-bf6d-dcce67563f4d" name="LastName" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="43eac579-b7c2-4919-a5a1-517c17e9f8d1">
+            <field Id="2577bc18-dd53-4725-87f9-9fb9a44685c0" name="Phone" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+  </classes>
+</dataBaseObjectModel>

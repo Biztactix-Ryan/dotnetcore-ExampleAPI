@@ -7,6 +7,7 @@ namespace ExampleAPI.Contracts.V1
 {
     public class APIRoutes
     {
+       
         private const string apiVersion = "v1";
         public static class Weather
         {
@@ -17,6 +18,13 @@ namespace ExampleAPI.Contracts.V1
         {
             public const string AuthUserLogin = "api/" + apiVersion + "/auth/UserLogin";
             public const string AuthAPILogin = "api/" + apiVersion + "/auth/APILogin";
+
+        }
+        public static class Example
+        {
+            public const string Route = "api/" + apiVersion + "/example";
+            public const string RoutebyId = "api/" + apiVersion + "/example/{id}";
+           
 
         }
 
