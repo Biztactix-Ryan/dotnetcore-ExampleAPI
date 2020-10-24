@@ -20,8 +20,9 @@ namespace ExampleAPI.Installers
                     options.EnableEndpointRouting = false;
                     options.Filters.Add<ValidationFilter>();
                 })
-                .AddFluentValidation(mvcConfiguration => mvcConfiguration.RegisterValidatorsFromAssemblyContaining<Startup>());
-        }
+                .AddFluentValidation(mvcConfiguration => mvcConfiguration.RegisterValidatorsFromAssemblyContaining<Startup>())
+				.AddNewtonsoftJson();
+        }		
 
      
     }
