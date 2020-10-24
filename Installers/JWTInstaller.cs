@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExampleAPI.Services;
 
 namespace ExampleAPI.Installers
 {
@@ -28,6 +29,10 @@ namespace ExampleAPI.Installers
                 ValidateLifetime = true
             };
             services.AddSingleton(tokenValidationParameters);
+
+            var jwtService = new JWTService(jwtSettings, tokenValidationParameters);
+            configuration.Bind(nameof(jwtService), jwtService);
+            services.AddSingleton(jwtService);
 
             services.AddAuthentication(x =>
             {

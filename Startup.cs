@@ -55,8 +55,8 @@ namespace ExampleAPI
                 option.SwaggerEndpoint(swaggerOptions.UiEndpoint, swaggerOptions.Description);
             });
             /// End Swagger Code
-            
-            
+
+            app.UseMiddleware<JWTHelper>();
 
             app.UseEndpoints(endpoints =>
             {
