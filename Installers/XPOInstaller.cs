@@ -17,29 +17,30 @@ namespace ExampleAPI.Installers
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
             // services.AddDxSampleModelJsonOptions();
-
+            var entities = GetClasses("ExampleAPI", "ExampleAPI.Models.ExampleXPOModel"); //Todo: Update Where the Data is
             services
                 .AddXpoDefaultUnitOfWork(true, options => options
-                .UseConnectionString(configuration.GetConnectionString("InMemoryDataStore"))
+                .UseConnectionString(configuration.GetConnectionString("InMemoryDataStore")) //TODO: Update Databse Connection string
                 .UseThreadSafeDataLayer(true)
-                .UseConnectionPool(false) // Remove this line if you use a database server like SQL Server, Oracle, PostgreSql, etc.                    
+                .UseConnectionPool(false) //TODO: Remove this line if you use a database server like SQL Server, Oracle, PostgreSql, etc.                    
                 .UseAutoCreationOption(DevExpress.Xpo.DB.AutoCreateOption.DatabaseAndSchema) // Remove this line if the database already exists
-                .UseEntityTypes(GetClasses("ExampleAPI", "ExampleAPI.Models.ExampleXPOModel"))); // Pass all of your persistent object types to this method.
+                .UseEntityTypes(entities)); // Pass all of your persistent object types to this method.
 
 
         }
         static Type[] GetClasses(string AssemblyName, string Namespace = "")
         {
             var asm2 = Assembly.Load(AssemblyName);
-            IEnumerable<Type> types;
+            List<Type> types;
             if (string.IsNullOrEmpty(Namespace))
             {
-                types = asm2.GetTypes().Where(t => t.IsClass);
+                types = asm2.GetTypes().Where(t => t.IsClass).ToList();
             }
             else
             {
-                types = asm2.GetTypes().Where(t => t.IsClass && t.Namespace == Namespace);
+                types = asm2.GetTypes().Where(t => t.IsClass && t.Namespace == Namespace).ToList();
             }
+            for (int i = types.Count() - 1; i >= 0; i--) { if (!types[i].IsAssignableTo(typeof(DevExpress.Xpo.PersistentBase))) { types.RemoveAt(i); } }
             if (types != null) { return types.ToArray(); }
             return null;
         }

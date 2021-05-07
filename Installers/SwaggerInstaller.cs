@@ -18,7 +18,7 @@ namespace ExampleAPI.Installers
         {
             services.AddSwaggerGen(x =>
             {
-                x.SwaggerDoc("v1", new OpenApiInfo { Title = "Net Ninja TikBackup API", Version = "v1" });
+                x.SwaggerDoc("v1", new OpenApiInfo { Title = "ExampleAPI Documentation", Version = "v1" });
 
                // x.ExampleFilters();
 
