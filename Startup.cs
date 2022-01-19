@@ -8,10 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using ExampleAPI.Installers;
 using SwaggerOptions =ExampleAPI.Options.SwaggerOptions;
 using ExampleAPI.Helpers;
+using AutoMapper;
 
 namespace ExampleAPI
 {
@@ -58,16 +58,15 @@ namespace ExampleAPI
             /// End Swagger Code
 
             app.UseMiddleware<JWTHelper>();
+            app.UseMiddleware<LogHelper>();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
 
-            app.UseMvc();
-
             app.UseXpoDemoData();
-
+            app.ApplicationServices.GetService<IMapper>().ConfigurationProvider.AssertConfigurationIsValid();
         }
     }
 }

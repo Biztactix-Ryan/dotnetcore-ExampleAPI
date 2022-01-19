@@ -11,12 +11,12 @@ namespace ExampleAPI.Mappers
 {
     public class V1Mappers : Profile
     {
-        
+
         public V1Mappers()
         {
-           CreateMap<ExampleObject, ExampleObjectResponse>();
-            CreateMap<ExampleObjectCreate, ExampleObject>();
-            CreateMap<ExampleObjectUpdate, ExampleObject>().ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
+            CreateMap<ExampleObject, ExampleObjectResponse>();
+            CreateMap<ExampleObjectCreate, ExampleObject>().ForMember(dest => dest.Oid, opt => opt.Ignore()).DisableCtorValidation();
+            CreateMap<ExampleObjectUpdate, ExampleObject>().ForMember(dest => dest.Oid, opt => opt.Ignore()).DisableCtorValidation().ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
         }
     }
 }
