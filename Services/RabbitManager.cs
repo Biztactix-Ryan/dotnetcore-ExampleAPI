@@ -8,12 +8,15 @@ using System.Text;
 
 namespace ExampleAPI.Services
 {
-    public class RabbitManager : IRabbitManager
+    public class RabbitManager : IRabbitManager, IDisposable
     {
         private readonly DefaultObjectPool<IModel> _objectPool;
+        private readonly IPooledObjectPolicy<IModel> _objectPolicy;
+        private bool _disposed;
 
         public RabbitManager(IPooledObjectPolicy<IModel> objectPolicy)
         {
+            _objectPolicy = objectPolicy;
             _objectPool = new DefaultObjectPool<IModel>(objectPolicy, Environment.ProcessorCount * 2);
         }
 
@@ -36,13 +39,22 @@ namespace ExampleAPI.Services
 
                 channel.BasicPublish("", queueName, properties, sendBytes);
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
             finally
             {
                 _objectPool.Return(channel);
+            }
+        }
+
+        public void Dispose()
+        {
+            if (_disposed)
+                return;
+
+            _disposed = true;
+
+            if (_objectPolicy is IDisposable disposablePolicy)
+            {
+                disposablePolicy.Dispose();
             }
         }
     }
@@ -53,11 +65,12 @@ namespace ExampleAPI.Services
     }
 
 
-    public class RabbitModelPooledObjectPolicy : IPooledObjectPolicy<IModel>
+    public class RabbitModelPooledObjectPolicy : IPooledObjectPolicy<IModel>, IDisposable
     {
         private readonly RabbitOptions _options;
 
         private readonly IConnection _connection;
+        private bool _disposed;
 
         public RabbitModelPooledObjectPolicy(IOptions<RabbitOptions> optionsAccs)
         {
@@ -94,6 +107,28 @@ namespace ExampleAPI.Services
             {
                 obj?.Dispose();
                 return false;
+            }
+        }
+
+        public void Dispose()
+        {
+            if (_disposed)
+                return;
+
+            _disposed = true;
+
+            if (_connection != null)
+            {
+                try
+                {
+                    _connection.Close();
+                }
+                catch
+                {
+                    // Connection may already be closed
+                }
+
+                _connection.Dispose();
             }
         }
     }

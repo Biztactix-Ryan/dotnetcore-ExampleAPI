@@ -7,6 +7,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using Microsoft.Extensions.Configuration;
 using NLog;
 
 namespace ExampleAPI.Helpers
@@ -21,17 +22,18 @@ namespace ExampleAPI.Helpers
             _next = next;
         }
 
-        public async Task Invoke(HttpContext context)
+        public async Task Invoke(HttpContext context, IConfiguration configuration)
         {
             if (context.User.Identity.IsAuthenticated)
             {
                 attachUserToContext(context);
-                LogManager.GetCurrentClassLogger().Info("Request|{0}|{1}|{2}|{3}|{4}", "ExampleAPI", ((LoggedinUser)context.Items["User"]).UserID, context.Connection.RemoteIpAddress.ToString(), context.Request.Method, context.Request.Path);
-                VerifyBackendToken(context);
+                var loggedInUser = context.Items.ContainsKey("User") ? context.Items["User"] as LoggedinUser : null;
+                LogManager.GetCurrentClassLogger().Info("Request|{0}|{1}|{2}|{3}|{4}", "ExampleAPI", loggedInUser?.UserID.ToString() ?? "null", (context.Connection.RemoteIpAddress?.ToString() ?? "unknown"), context.Request.Method, context.Request.Path);
+                VerifyBackendToken(context, configuration);
             }
             else
             {
-                LogManager.GetCurrentClassLogger().Info("Request|{0}|{1}|{2}|{3}|{4}", "ExampleAPI", "null", context.Connection.RemoteIpAddress.ToString(), context.Request.Method, context.Request.Path);
+                LogManager.GetCurrentClassLogger().Info("Request|{0}|{1}|{2}|{3}|{4}", "ExampleAPI", "null", (context.Connection.RemoteIpAddress?.ToString() ?? "unknown"), context.Request.Method, context.Request.Path);
             }
             await _next(context);
         }
@@ -44,7 +46,10 @@ namespace ExampleAPI.Helpers
                 LoggedinUser user = new LoggedinUser();
                 user.Username = ci.FindFirst("Username")?.Value;
                 user.Email = ci.FindFirst("Email")?.Value;
-                user.UserID = Guid.Parse(ci.FindFirst("UserID")?.Value);                
+                var userIdValue = ci.FindFirst("UserID")?.Value;
+                if (!Guid.TryParse(userIdValue, out var userId))
+                    return;
+                user.UserID = userId;
                 context.Items["User"] = user;
             }
             catch
@@ -53,23 +58,34 @@ namespace ExampleAPI.Helpers
                 // user is not attached to context so request won't have access to secure routes
             }
         }
-        private void VerifyBackendToken(HttpContext context)
+        private void VerifyBackendToken(HttpContext context, IConfiguration configuration)
         {
             context.Items["BackendAuth"] = false;
             var ci = context.User.Identity as ClaimsIdentity;
             if (ci.FindFirst("BACKEND")?.Value == "TRUE")
             {
+                var tokenValue = ci.FindFirst("Token")?.Value;
+                var checkValue = ci.FindFirst("Check")?.Value;
+                var appNameValue = ci.FindFirst("AppName")?.Value;
+
+                if (tokenValue == null || checkValue == null || appNameValue == null)
+                    return;
+
+                var tokenPassword = configuration["BackendAuth:TokenPassword"];
+                if (string.IsNullOrEmpty(tokenPassword))
+                    throw new InvalidOperationException("BackendAuth:TokenPassword is not configured in appsettings.json");
+
                 string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                password: "WhyHaveAStaticToken?", // TODO: Change Backend Token
-                salt: Convert.FromBase64String(ci.FindFirst("Token").Value),
+                password: tokenPassword,
+                salt: Convert.FromBase64String(tokenValue),
                 prf: KeyDerivationPrf.HMACSHA512,
                 iterationCount: 10000,
                 numBytesRequested: 256 / 8));
 
-                if (ci.FindFirst("Check").Value == hashed)
+                if (checkValue == hashed)
                 {
                     context.Items["BackendAuth"] = true;
-                    context.Items["BackendApp"] = ci.FindFirst("AppName").Value;
+                    context.Items["BackendApp"] = appNameValue;
                 }
             }
 

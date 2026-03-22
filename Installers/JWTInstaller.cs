@@ -14,25 +14,27 @@ namespace ExampleAPI.Installers
 {
     public class JWTInstaller : IInstaller
     {
+        public int Order => 20;
+
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
             var jwtSettings = new JwtSettings();
-            configuration.Bind(nameof(jwtSettings), jwtSettings);
+            configuration.Bind("JwtSettings", jwtSettings);
             services.AddSingleton(jwtSettings);
             var tokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSettings.Secret)),
-                ValidateIssuer = false,
-                ValidateAudience = false,
-                RequireExpirationTime = false,
+                ValidateIssuer = true,
+                ValidIssuer = jwtSettings.Issuer,
+                ValidateAudience = true,
+                ValidAudience = jwtSettings.Audience,
+                RequireExpirationTime = true,
                 ValidateLifetime = true
             };
             services.AddSingleton(tokenValidationParameters);
 
-            var jwtService = new JWTService(jwtSettings, tokenValidationParameters);
-            configuration.Bind(nameof(jwtService), jwtService);
-            services.AddSingleton(jwtService);
+            services.AddSingleton<JWTService>();
 
             services.AddAuthentication(x =>
             {

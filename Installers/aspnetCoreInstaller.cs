@@ -13,21 +13,23 @@ namespace ExampleAPI.Installers
     public class aspnetCoreInstaller:IInstaller
 
     {
+        public int Order => 0;
+
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
             services
                .AddMvc(options =>
                {
-                   options.EnableEndpointRouting = false;
                    options.Filters.Add<ValidationFilter>();
                })
                .AddFluentValidation(mvcConfiguration => mvcConfiguration.RegisterValidatorsFromAssemblyContaining<Startup>());
 
-            // Add Cors            
+            // Add Cors
+            var allowedOrigins = configuration.GetSection("Cors:AllowedOrigins").Get<string[]>() ?? Array.Empty<string>();
             services.AddCors(options =>
-            {                
-                options.AddPolicy("NNCors", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().SetPreflightMaxAge(new System.TimeSpan(24, 0, 0)));
-                options.AddDefaultPolicy(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().SetPreflightMaxAge(new System.TimeSpan(24, 0, 0)));
+            {
+                options.AddPolicy("NNCors", builder => builder.WithOrigins(allowedOrigins).AllowAnyHeader().AllowAnyMethod().SetPreflightMaxAge(new System.TimeSpan(24, 0, 0)));
+                options.AddDefaultPolicy(builder => builder.WithOrigins(allowedOrigins).AllowAnyHeader().AllowAnyMethod().SetPreflightMaxAge(new System.TimeSpan(24, 0, 0)));
             });
 
 

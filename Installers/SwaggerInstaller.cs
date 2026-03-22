@@ -14,6 +14,8 @@ namespace ExampleAPI.Installers
     public class SwaggerInstaller : IInstaller
 
     {
+        public int Order => 40;
+
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
             services.AddSwaggerGen(x =>

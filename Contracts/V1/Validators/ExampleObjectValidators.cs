@@ -10,9 +10,9 @@ namespace ExampleAPI.Contracts.V1.Validators
     {
         public ExampleObjectCreateValidator()
         {
-            RuleFor(x => x.FirstName).NotEmpty().Matches("^[a-zA-Z]*$");
-            RuleFor(x => x.LastName).NotEmpty().Matches("^[a-zA-Z]*$");
-            RuleFor(x => x.Phone).Matches("^[0-9]*$");
+            RuleFor(x => x.FirstName).NotEmpty().Matches("^[a-zA-Z]+$");
+            RuleFor(x => x.LastName).NotEmpty().Matches("^[a-zA-Z]+$");
+            RuleFor(x => x.Phone).Matches("^[0-9]+$");
         }
        
     }

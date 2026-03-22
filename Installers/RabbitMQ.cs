@@ -9,6 +9,8 @@ namespace ExampleAPI.Installers
 {
     public class RabbitMQ : IInstaller
     {
+        public int Order => 50;
+
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
             var rabbitConfig = configuration.GetSection("rabbit");

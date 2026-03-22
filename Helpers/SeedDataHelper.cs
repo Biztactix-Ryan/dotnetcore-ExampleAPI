@@ -38,14 +38,9 @@ namespace ExampleAPI.Helpers
 
         private static void CreateCustomer(UnitOfWork uow, string firstName, string lastName)
         {
-            for (int i = 0; i < firstNames.Length * lastNames.Length; i++)
-            {
-                ExampleObject customer = new ExampleObject(uow);
-                customer.FirstName = firstName;
-                customer.LastName = lastName;
-            }
-            
-            
+            ExampleObject customer = new ExampleObject(uow);
+            customer.FirstName = firstName;
+            customer.LastName = lastName;
         }
     }
 }

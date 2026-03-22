@@ -38,9 +38,9 @@ namespace ExampleAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseHttpsRedirection();
             app.UseRouting();
             app.UseCors("NNCors");
-            app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseAuthorization();
 

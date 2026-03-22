@@ -1,6 +1,7 @@
 ﻿using ExampleAPI.Models.ExampleXPOModel;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -13,6 +14,9 @@ namespace ExampleAPI.Installers
     public class XPOInstaller : IInstaller
 
     {
+        private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
+
+        public int Order => 10;
 
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
@@ -22,7 +26,7 @@ namespace ExampleAPI.Installers
                 .AddXpoDefaultUnitOfWork(true, options => options
                 .UseConnectionString(configuration.GetConnectionString("InMemoryDataStore")) //TODO: Update Databse Connection string
                 .UseThreadSafeDataLayer(true)
-                .UseConnectionPool(false) //TODO: Remove this line if you use a database server like SQL Server, Oracle, PostgreSql, etc.                    
+                .UseConnectionPool(false) //TODO: Remove this line if you use a database server like SQL Server, Oracle, PostgreSql, etc.
                 .UseAutoCreationOption(DevExpress.Xpo.DB.AutoCreateOption.DatabaseAndSchema) // Remove this line if the database already exists
                 .UseEntityTypes(entities)); // Pass all of your persistent object types to this method.
 
@@ -31,18 +35,28 @@ namespace ExampleAPI.Installers
         static Type[] GetClasses(string AssemblyName, string Namespace = "")
         {
             var asm2 = Assembly.Load(AssemblyName);
+            Type[] allTypes;
+            try
+            {
+                allTypes = asm2.GetTypes();
+            }
+            catch (ReflectionTypeLoadException ex)
+            {
+                _logger.Warn(ex, "Some types could not be loaded from assembly '{0}'. Skipping unloadable types.", AssemblyName);
+                allTypes = ex.Types.Where(t => t != null).ToArray();
+            }
+
             List<Type> types;
             if (string.IsNullOrEmpty(Namespace))
             {
-                types = asm2.GetTypes().Where(t => t.IsClass).ToList();
+                types = allTypes.Where(t => t.IsClass).ToList();
             }
             else
             {
-                types = asm2.GetTypes().Where(t => t.IsClass && t.Namespace == Namespace).ToList();
+                types = allTypes.Where(t => t.IsClass && t.Namespace == Namespace).ToList();
             }
             for (int i = types.Count() - 1; i >= 0; i--) { if (!types[i].IsAssignableTo(typeof(DevExpress.Xpo.PersistentBase))) { types.RemoveAt(i); } }
-            if (types != null) { return types.ToArray(); }
-            return null;
+            return types.ToArray();
         }
     }
 }

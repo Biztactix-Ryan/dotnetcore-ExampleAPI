@@ -27,12 +27,14 @@ namespace ExampleAPI.Helpers
             }
             finally
             {
-                if (context.User.Identity.IsAuthenticated)
+                var loggedInUser = context.Items["User"] as LoggedinUser;
+
+                if (context.User.Identity.IsAuthenticated && loggedInUser != null)
                 {
                   _logger.ExtendedInfo($"Request|ExampleAPI|{context.Request.Path}|",  new Dictionary<string, string>() {
                     { "API", "ExampleAPI" },
-                    { "User", ((LoggedinUser)context.Items["User"]).UserID.ToString() },
-                    { "IP", context.Connection.RemoteIpAddress.ToString() },
+                    { "User", loggedInUser.UserID.ToString() },
+                    { "IP", (context.Connection.RemoteIpAddress?.ToString() ?? "unknown") },
                     { "Method", context.Request.Method },
                     { "ResponseCode", context.Response.StatusCode.ToString() },
                     { "URL", context.Request.Path }});
@@ -40,12 +42,12 @@ namespace ExampleAPI.Helpers
                 else
                 {
                     _logger.ExtendedInfo($"Request|ExampleAPI|{context.Request.Path}|", new Dictionary<string, string>() {
-                    { "API", "ExampleAPI" },                    
-                    { "IP", context.Connection.RemoteIpAddress.ToString() },
+                    { "API", "ExampleAPI" },
+                    { "IP", (context.Connection.RemoteIpAddress?.ToString() ?? "unknown") },
                     { "Method", context.Request.Method },
                     { "ResponseCode", context.Response.StatusCode.ToString() },
                     { "URL", context.Request.Path }});
-                }                    
+                }
               
             }
         }

@@ -38,10 +38,11 @@ namespace ExampleAPI.Controllers.V1
 
         // GET api/<ExampleController>/5
         [HttpGet(APIRoutes.Example.RoutebyId)]
-        public ExampleObjectResponse Get(int id)
+        public IActionResult Get(int id)
         {
             var ExObj = _uow.GetObjectByKey<ExampleObject>(id);
-            return _mapper.Map<ExampleObjectResponse>(ExObj);
+            if (ExObj == null) { return NotFound(); }
+            return Ok(_mapper.Map<ExampleObjectResponse>(ExObj));
         }
 
         // POST api/<ExampleController>

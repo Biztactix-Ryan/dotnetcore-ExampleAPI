@@ -29,11 +29,12 @@ namespace ExampleAPI.Services
 
             var claims = new[] {
         new Claim("Username", user.Username),
-        new Claim("Email", user.Email),      
+        new Claim("Email", user.Email),
+        new Claim("UserID", user.UserID.ToString()),
         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
     };
 
-            var token = new JwtSecurityToken(_jwtSettings.Issuer, _jwtSettings.Issuer, claims, expires: DateTime.UtcNow.Add(_jwtSettings.TokenLifetime), signingCredentials: credentials);
+            var token = new JwtSecurityToken(_jwtSettings.Issuer, _jwtSettings.Audience, claims, expires: DateTime.UtcNow.Add(_jwtSettings.TokenLifetime), signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
