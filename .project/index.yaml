@@ -1,0 +1,1292 @@
+entries:
+- id: EPIC-EX-1
+  title: Helpers & Utilities Test Coverage
+  type: epic
+  status: done
+  points: null
+  story_id: null
+  epic_id: null
+  tags: []
+- id: EPIC-EX-2
+  title: Contracts & Models Test Coverage
+  type: epic
+  status: done
+  points: null
+  story_id: null
+  epic_id: null
+  tags: []
+- id: EPIC-EX-3
+  title: Installers Test Coverage
+  type: epic
+  status: done
+  points: null
+  story_id: null
+  epic_id: null
+  tags: []
+- id: EPIC-EX-4
+  title: V2 API Test Coverage
+  type: epic
+  status: done
+  points: null
+  story_id: null
+  epic_id: null
+  tags: []
+- id: EPIC-EX-5
+  title: ExampleAPI Bug Fixes
+  type: epic
+  status: done
+  points: null
+  story_id: null
+  epic_id: null
+  tags: []
+- id: US-EX-1
+  title: Add LogHelper Unit Tests
+  type: story
+  status: done
+  points: 5
+  story_id: null
+  epic_id: EPIC-EX-1
+  tags: []
+- id: US-EX-10
+  title: Add V2 APIRoutes Contract Tests
+  type: story
+  status: done
+  points: 3
+  story_id: null
+  epic_id: EPIC-EX-4
+  tags: []
+- id: US-EX-11
+  title: Fix dead null check in XPOInstaller.GetClasses()
+  type: story
+  status: done
+  points: 3
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-12
+  title: Fix NullReferenceException in JWTHelper.Invoke() after failed user attach
+  type: story
+  status: done
+  points: 5
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-13
+  title: Fix Guid.Parse on nullable value in JWTHelper.attachUserToContext()
+  type: story
+  status: done
+  points: 5
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-14
+  title: Add missing UserID claim to JWTService.GenerateJSONWebToken()
+  type: story
+  status: done
+  points: 3
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-15
+  title: Fix stack trace destruction in RabbitManager.Publish()
+  type: story
+  status: done
+  points: 3
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-16
+  title: Fix NullReferenceException in LogHelper for authenticated users
+  type: story
+  status: done
+  points: 5
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-17
+  title: Fix massive data duplication in SeedDataHelper.CreateCustomer()
+  type: story
+  status: done
+  points: 3
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-18
+  title: Fix middleware ordering in Startup.Configure()
+  type: story
+  status: done
+  points: 3
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-19
+  title: Fix EnableEndpointRouting conflict with UseEndpoints()
+  type: story
+  status: done
+  points: 5
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-2
+  title: Add SeedDataHelper Unit Tests
+  type: story
+  status: done
+  points: 5
+  story_id: null
+  epic_id: EPIC-EX-1
+  tags: []
+- id: US-EX-20
+  title: Fix ineffective config binding in JWTInstaller
+  type: story
+  status: done
+  points: 5
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-21
+  title: Fix NullReferenceExceptions in VerifyBackendToken()
+  type: story
+  status: done
+  points: 5
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-22
+  title: Move hardcoded backend token to configuration
+  type: story
+  status: done
+  points: 5
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-23
+  title: Restrict CORS policy from allowing all origins
+  type: story
+  status: done
+  points: 5
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-24
+  title: Enable JWT issuer and audience validation
+  type: story
+  status: done
+  points: 8
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-25
+  title: Add execution ordering to reflection-based installer discovery
+  type: story
+  status: done
+  points: 8
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-26
+  title: Handle ReflectionTypeLoadException in XPOInstaller.GetClasses()
+  type: story
+  status: done
+  points: 5
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-27
+  title: Fix NullReferenceException in ExampleController.Get(int id)
+  type: story
+  status: done
+  points: 3
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-28
+  title: Fix potential NullReferenceException on RemoteIpAddress in JWTHelper and
+    LogHelper
+  type: story
+  status: done
+  points: 3
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-29
+  title: Fix resource leak in RabbitManager - IConnection not disposed
+  type: story
+  status: done
+  points: 5
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-3
+  title: Add XPODemoData Unit Tests
+  type: story
+  status: done
+  points: 3
+  story_id: null
+  epic_id: EPIC-EX-1
+  tags: []
+- id: US-EX-30
+  title: Remove unnecessary async from AuthController methods
+  type: story
+  status: done
+  points: 3
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-31
+  title: Fix weak regex patterns in ExampleObjectValidators
+  type: story
+  status: done
+  points: 3
+  story_id: null
+  epic_id: EPIC-EX-5
+  tags: []
+- id: US-EX-4
+  title: Add Auth Contract Tests
+  type: story
+  status: done
+  points: 8
+  story_id: null
+  epic_id: EPIC-EX-2
+  tags: []
+- id: US-EX-5
+  title: Add Example Object Contract Tests
+  type: story
+  status: done
+  points: 5
+  story_id: null
+  epic_id: EPIC-EX-2
+  tags: []
+- id: US-EX-6
+  title: Add ErrorModel and V2 APIRoutes Tests
+  type: story
+  status: done
+  points: 3
+  story_id: null
+  epic_id: EPIC-EX-2
+  tags: []
+- id: US-EX-7
+  title: Add XPO ExampleObject Model Tests
+  type: story
+  status: done
+  points: 3
+  story_id: null
+  epic_id: EPIC-EX-2
+  tags: []
+- id: US-EX-8
+  title: Add Installer Registration Tests
+  type: story
+  status: done
+  points: 13
+  story_id: null
+  epic_id: EPIC-EX-3
+  tags: []
+- id: US-EX-9
+  title: Add V2 AuthController Tests
+  type: story
+  status: done
+  points: 8
+  story_id: null
+  epic_id: EPIC-EX-4
+  tags: []
+- id: US-EX-1-1
+  title: 'Test: All public methods tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-1
+  epic_id: null
+  tags: []
+- id: US-EX-1-2
+  title: 'Test: Edge cases covered'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-1
+  epic_id: null
+  tags: []
+- id: US-EX-1-3
+  title: 'Test: Tests pass in CI'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-1
+  epic_id: null
+  tags: []
+- id: US-EX-1-4
+  title: Implement LogHelper unit tests
+  type: task
+  status: done
+  points: 3
+  story_id: US-EX-1
+  epic_id: null
+  tags: []
+- id: US-EX-10-1
+  title: 'Test: All V2 route constants validated'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-10
+  epic_id: null
+  tags: []
+- id: US-EX-10-2
+  title: 'Test: Routes match controller attributes'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-10
+  epic_id: null
+  tags: []
+- id: US-EX-10-3
+  title: Implement V2 APIRoutes contract validation tests
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-10
+  epic_id: null
+  tags: []
+- id: US-EX-11-1
+  title: 'Test: Dead null check removed from GetClasses()'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-11
+  epic_id: null
+  tags: []
+- id: US-EX-11-2
+  title: 'Test: Method always returns a valid Type[] (empty array if no types found)'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-11
+  epic_id: null
+  tags: []
+- id: US-EX-11-3
+  title: 'Test: No null return possible'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-11
+  epic_id: null
+  tags: []
+- id: US-EX-11-4
+  title: Remove dead null check from XPOInstaller.GetClasses()
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-11
+  epic_id: null
+  tags: []
+- id: US-EX-12-1
+  title: 'Test: No NullReferenceException when user attachment fails'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-12
+  epic_id: null
+  tags: []
+- id: US-EX-12-2
+  title: 'Test: Logging on line 29 checks if user was successfully attached before
+    accessing properties'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-12
+  epic_id: null
+  tags: []
+- id: US-EX-12-3
+  title: 'Test: Requests with malformed claims are handled gracefully'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-12
+  epic_id: null
+  tags: []
+- id: US-EX-12-4
+  title: Add null check before accessing User in JWTHelper.Invoke()
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-12
+  epic_id: null
+  tags: []
+- id: US-EX-13-1
+  title: 'Test: UserID claim is safely parsed with TryParse or null check'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-13
+  epic_id: null
+  tags: []
+- id: US-EX-13-2
+  title: 'Test: Missing UserID claim does not throw'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-13
+  epic_id: null
+  tags: []
+- id: US-EX-13-3
+  title: 'Test: User attachment fails gracefully if UserID is missing or invalid'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-13
+  epic_id: null
+  tags: []
+- id: US-EX-13-4
+  title: Replace Guid.Parse with Guid.TryParse in JWTHelper.attachUserToContext()
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-13
+  epic_id: null
+  tags: []
+- id: US-EX-14-1
+  title: 'Test: UserID claim added to generated JWT tokens as new Claim("UserID" user.UserID.ToString())'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-14
+  epic_id: null
+  tags: []
+- id: US-EX-14-2
+  title: 'Test: JWTHelper middleware can successfully extract UserID from tokens'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-14
+  epic_id: null
+  tags: []
+- id: US-EX-14-3
+  title: 'Test: End-to-end auth flow works without NullReferenceException'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-14
+  epic_id: null
+  tags: []
+- id: US-EX-14-4
+  title: Add UserID claim to JWTService.GenerateJSONWebToken()
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-14
+  epic_id: null
+  tags: []
+- id: US-EX-15-1
+  title: 'Test: Stack trace preserved on RabbitMQ publish errors'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-15
+  epic_id: null
+  tags: []
+- id: US-EX-15-2
+  title: 'Test: Either use throw; or remove unnecessary try/catch'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-15
+  epic_id: null
+  tags: []
+- id: US-EX-15-3
+  title: 'Test: finally block still returns channel to pool'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-15
+  epic_id: null
+  tags: []
+- id: US-EX-15-4
+  title: Fix throw ex to throw in RabbitManager.Publish()
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-15
+  epic_id: null
+  tags: []
+- id: US-EX-16-1
+  title: 'Test: LogHelper checks if context.Items["User"] is non-null before casting'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-16
+  epic_id: null
+  tags: []
+- id: US-EX-16-2
+  title: 'Test: No NullReferenceException in finally block'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-16
+  epic_id: null
+  tags: []
+- id: US-EX-16-3
+  title: 'Test: Original response is not swallowed by logging errors'
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-16
+  epic_id: null
+  tags: []
+- id: US-EX-16-4
+  title: Add null check for User context item in LogHelper finally block
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-16
+  epic_id: null
+  tags: []
+- id: US-EX-17-1
+  title: 'Test: CreateCustomer creates one record per call not 272'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-17
+  epic_id: null
+  tags: []
+- id: US-EX-17-2
+  title: 'Test: Total seed data is 272 records (17*16) not 73984'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-17
+  epic_id: null
+  tags: []
+- id: US-EX-17-3
+  title: 'Test: Startup time is reasonable'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-17
+  epic_id: null
+  tags: []
+- id: US-EX-17-4
+  title: Remove inner loop duplication in SeedDataHelper.CreateCustomer()
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-17
+  epic_id: null
+  tags: []
+- id: US-EX-18-1
+  title: 'Test: UseHttpsRedirection() called before UseRouting() and UseCors()'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-18
+  epic_id: null
+  tags: []
+- id: US-EX-18-2
+  title: 'Test: Non-HTTPS requests are redirected before any routing occurs'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-18
+  epic_id: null
+  tags: []
+- id: US-EX-18-3
+  title: Reorder middleware pipeline in Startup.Configure()
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-18
+  epic_id: null
+  tags: []
+- id: US-EX-19-1
+  title: 'Test: Routing configuration is consistent between installer and Startup'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-19
+  epic_id: null
+  tags: []
+- id: US-EX-19-2
+  title: 'Test: No contradictory endpoint routing settings'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-19
+  epic_id: null
+  tags: []
+- id: US-EX-19-3
+  title: 'Test: All routes resolve correctly'
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-19
+  epic_id: null
+  tags: []
+- id: US-EX-19-4
+  title: Resolve EnableEndpointRouting conflict between installer and Startup
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-19
+  epic_id: null
+  tags: []
+- id: US-EX-2-1
+  title: 'Test: All public methods tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-2
+  epic_id: null
+  tags: []
+- id: US-EX-2-2
+  title: 'Test: Mock data dependencies'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-2
+  epic_id: null
+  tags: []
+- id: US-EX-2-3
+  title: 'Test: Tests pass in CI'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-2
+  epic_id: null
+  tags: []
+- id: US-EX-2-4
+  title: Implement SeedDataHelper unit tests
+  type: task
+  status: done
+  points: 3
+  story_id: US-EX-2
+  epic_id: null
+  tags: []
+- id: US-EX-20-1
+  title: 'Test: Config binding uses correct section name or is removed if unnecessary'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-20
+  epic_id: null
+  tags: []
+- id: US-EX-20-2
+  title: 'Test: JWTService registered via DI for testability'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-20
+  epic_id: null
+  tags: []
+- id: US-EX-20-3
+  title: 'Test: JWT token generation works correctly with configured settings'
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-20
+  epic_id: null
+  tags: []
+- id: US-EX-20-4
+  title: Fix config binding section name and register JWTService via DI
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-20
+  epic_id: null
+  tags: []
+- id: US-EX-21-1
+  title: 'Test: All claim lookups use null-conditional operator or null checks'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-21
+  epic_id: null
+  tags: []
+- id: US-EX-21-2
+  title: 'Test: Missing Token/Check/AppName claims don''t crash the middleware'
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-21
+  epic_id: null
+  tags: []
+- id: US-EX-21-3
+  title: 'Test: Backend auth gracefully falls back to BackendAuth=false on missing
+    claims'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-21
+  epic_id: null
+  tags: []
+- id: US-EX-21-4
+  title: Add null-conditional operators to claim lookups in VerifyBackendToken()
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-21
+  epic_id: null
+  tags: []
+- id: US-EX-22-1
+  title: 'Test: Backend token password loaded from appsettings.json or secret manager'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-22
+  epic_id: null
+  tags: []
+- id: US-EX-22-2
+  title: 'Test: No hardcoded secrets in source code'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-22
+  epic_id: null
+  tags: []
+- id: US-EX-22-3
+  title: 'Test: Existing backend auth flow still works'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-22
+  epic_id: null
+  tags: []
+- id: US-EX-22-4
+  title: Move hardcoded backend token password to appsettings.json
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-22
+  epic_id: null
+  tags: []
+- id: US-EX-23-1
+  title: 'Test: CORS origins configured from appsettings.json'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-23
+  epic_id: null
+  tags: []
+- id: US-EX-23-2
+  title: 'Test: Only approved origins are allowed'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-23
+  epic_id: null
+  tags: []
+- id: US-EX-23-3
+  title: 'Test: AllowAnyOrigin removed from production configuration'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-23
+  epic_id: null
+  tags: []
+- id: US-EX-23-4
+  title: Replace AllowAnyOrigin with configured origin list in CORS policies
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-23
+  epic_id: null
+  tags: []
+- id: US-EX-24-1
+  title: 'Test: ValidateIssuer and ValidateAudience set to true'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-24
+  epic_id: null
+  tags: []
+- id: US-EX-24-2
+  title: 'Test: RequireExpirationTime set to true'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-24
+  epic_id: null
+  tags: []
+- id: US-EX-24-3
+  title: 'Test: ValidIssuer and ValidAudience configured from settings'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-24
+  epic_id: null
+  tags: []
+- id: US-EX-24-4
+  title: 'Test: Tokens from other systems are rejected'
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-24
+  epic_id: null
+  tags: []
+- id: US-EX-24-5
+  title: Enable JWT issuer, audience, and expiration validation
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-24
+  epic_id: null
+  tags: []
+- id: US-EX-25-1
+  title: 'Test: Installers execute in a deterministic order'
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-25
+  epic_id: null
+  tags: []
+- id: US-EX-25-2
+  title: 'Test: Order can be specified per installer'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-25
+  epic_id: null
+  tags: []
+- id: US-EX-25-3
+  title: 'Test: Existing installers assigned appropriate order values'
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-25
+  epic_id: null
+  tags: []
+- id: US-EX-25-4
+  title: Add Order property to IInstaller interface and implement ordering
+  type: task
+  status: done
+  points: 3
+  story_id: US-EX-25
+  epic_id: null
+  tags: []
+- id: US-EX-26-1
+  title: 'Test: GetClasses() handles ReflectionTypeLoadException'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-26
+  epic_id: null
+  tags: []
+- id: US-EX-26-2
+  title: 'Test: Unloadable types are skipped not crashed on'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-26
+  epic_id: null
+  tags: []
+- id: US-EX-26-3
+  title: 'Test: Valid types still discovered and registered correctly'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-26
+  epic_id: null
+  tags: []
+- id: US-EX-26-4
+  title: Handle ReflectionTypeLoadException in XPOInstaller.GetClasses()
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-26
+  epic_id: null
+  tags: []
+- id: US-EX-27-1
+  title: 'Test: Get(id) returns NotFound or BadRequest when object doesn''t exist'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-27
+  epic_id: null
+  tags: []
+- id: US-EX-27-2
+  title: 'Test: No NullReferenceException when requesting non-existent ID'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-27
+  epic_id: null
+  tags: []
+- id: US-EX-27-3
+  title: 'Test: Existing valid ID requests still work correctly'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-27
+  epic_id: null
+  tags: []
+- id: US-EX-27-4
+  title: Add null check after GetObjectByKey() in ExampleController.Get(id)
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-27
+  epic_id: null
+  tags: []
+- id: US-EX-28-1
+  title: 'Test: RemoteIpAddress accessed with null-conditional operator or null check'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-28
+  epic_id: null
+  tags: []
+- id: US-EX-28-2
+  title: 'Test: Fallback value used when IP is null (e.g. ''unknown'')'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-28
+  epic_id: null
+  tags: []
+- id: US-EX-28-3
+  title: 'Test: No NullReferenceException when RemoteIpAddress is null'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-28
+  epic_id: null
+  tags: []
+- id: US-EX-28-4
+  title: Add null-conditional operator to RemoteIpAddress in JWTHelper and LogHelper
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-28
+  epic_id: null
+  tags: []
+- id: US-EX-29-1
+  title: 'Test: RabbitManager implements IDisposable'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-29
+  epic_id: null
+  tags: []
+- id: US-EX-29-2
+  title: 'Test: Connection is disposed on shutdown'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-29
+  epic_id: null
+  tags: []
+- id: US-EX-29-3
+  title: 'Test: Channel pool is cleaned up properly'
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-29
+  epic_id: null
+  tags: []
+- id: US-EX-29-4
+  title: Implement IDisposable on RabbitManager to dispose connection and channel
+    pool
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-29
+  epic_id: null
+  tags: []
+- id: US-EX-3-1
+  title: 'Test: Demo data creation methods tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-3
+  epic_id: null
+  tags: []
+- id: US-EX-3-2
+  title: 'Test: Tests pass in CI'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-3
+  epic_id: null
+  tags: []
+- id: US-EX-3-3
+  title: Implement XPODemoData unit tests
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-3
+  epic_id: null
+  tags: []
+- id: US-EX-30-1
+  title: 'Test: AuthController methods return IActionResult or Task.FromResult instead
+    of using async'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-30
+  epic_id: null
+  tags: []
+- id: US-EX-30-2
+  title: 'Test: No compiler warnings about async methods lacking await'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-30
+  epic_id: null
+  tags: []
+- id: US-EX-30-3
+  title: 'Test: API behavior unchanged'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-30
+  epic_id: null
+  tags: []
+- id: US-EX-30-4
+  title: Remove async keyword from AuthController methods that lack await
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-30
+  epic_id: null
+  tags: []
+- id: US-EX-31-1
+  title: 'Test: Regex patterns use + instead of * where appropriate'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-31
+  epic_id: null
+  tags: []
+- id: US-EX-31-2
+  title: 'Test: Phone validation handles empty strings intentionally (either reject
+    or explicitly allow)'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-31
+  epic_id: null
+  tags: []
+- id: US-EX-31-3
+  title: 'Test: Existing valid inputs still pass validation'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-31
+  epic_id: null
+  tags: []
+- id: US-EX-31-4
+  title: Fix weak regex patterns in ExampleObjectValidators to use + instead of *
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-31
+  epic_id: null
+  tags: []
+- id: US-EX-4-1
+  title: 'Test: V1 APIKeyAuthenticateRequest tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-4
+  epic_id: null
+  tags: []
+- id: US-EX-4-2
+  title: 'Test: V1 UserAuthenticateRequest tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-4
+  epic_id: null
+  tags: []
+- id: US-EX-4-3
+  title: 'Test: V2 APIKeyAuthenticateRequest tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-4
+  epic_id: null
+  tags: []
+- id: US-EX-4-4
+  title: 'Test: V2 UserAuthenticateRequest tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-4
+  epic_id: null
+  tags: []
+- id: US-EX-4-5
+  title: Implement V1 and V2 auth request contract tests
+  type: task
+  status: done
+  points: 3
+  story_id: US-EX-4
+  epic_id: null
+  tags: []
+- id: US-EX-5-1
+  title: 'Test: ExampleObjectCreate tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-5
+  epic_id: null
+  tags: []
+- id: US-EX-5-2
+  title: 'Test: ExampleObjectResponse tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-5
+  epic_id: null
+  tags: []
+- id: US-EX-5-3
+  title: 'Test: ExampleObjectUpdate tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-5
+  epic_id: null
+  tags: []
+- id: US-EX-5-4
+  title: Implement ExampleObject contract tests
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-5
+  epic_id: null
+  tags: []
+- id: US-EX-6-1
+  title: 'Test: ErrorModel tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-6
+  epic_id: null
+  tags: []
+- id: US-EX-6-2
+  title: 'Test: V2 APIRoutes tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-6
+  epic_id: null
+  tags: []
+- id: US-EX-6-3
+  title: Implement ErrorModel and V2 APIRoutes tests
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-6
+  epic_id: null
+  tags: []
+- id: US-EX-7-1
+  title: 'Test: Model properties tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-7
+  epic_id: null
+  tags: []
+- id: US-EX-7-2
+  title: 'Test: Business logic methods tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-7
+  epic_id: null
+  tags: []
+- id: US-EX-7-3
+  title: Implement ExampleObject XPO model tests
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-7
+  epic_id: null
+  tags: []
+- id: US-EX-8-1
+  title: 'Test: aspnetCoreInstaller tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-8
+  epic_id: null
+  tags: []
+- id: US-EX-8-2
+  title: 'Test: AutomapperInstaller tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-8
+  epic_id: null
+  tags: []
+- id: US-EX-8-3
+  title: 'Test: JWTInstaller tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-8
+  epic_id: null
+  tags: []
+- id: US-EX-8-4
+  title: 'Test: RabbitMQ installer tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-8
+  epic_id: null
+  tags: []
+- id: US-EX-8-5
+  title: 'Test: SwaggerInstaller tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-8
+  epic_id: null
+  tags: []
+- id: US-EX-8-6
+  title: 'Test: XPOInstaller tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-8
+  epic_id: null
+  tags: []
+- id: US-EX-8-7
+  title: Implement installer registration tests for all 6 installers
+  type: task
+  status: done
+  points: 5
+  story_id: US-EX-8
+  epic_id: null
+  tags: []
+- id: US-EX-9-1
+  title: 'Test: All V2 auth endpoints tested'
+  type: task
+  status: done
+  points: 1
+  story_id: US-EX-9
+  epic_id: null
+  tags: []
+- id: US-EX-9-2
+  title: 'Test: Auth token validation tested'
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-9
+  epic_id: null
+  tags: []
+- id: US-EX-9-3
+  title: 'Test: Error responses tested'
+  type: task
+  status: done
+  points: 2
+  story_id: US-EX-9
+  epic_id: null
+  tags: []
+- id: US-EX-9-4
+  title: Implement V2 AuthController unit tests
+  type: task
+  status: done
+  points: 3
+  story_id: US-EX-9
+  epic_id: null
+  tags: []
+total_points: 312
+completed_points: 312
+story_count: 31
+task_count: 124
+epic_count: 5

@@ -1,0 +1,12 @@
+auto_commit: false
+deploy_branch: null
+description: Example .NET API with JWT auth, XPO ORM, RabbitMQ, and versioned endpoints
+hub: false
+name: dotnet-exampleapi
+next_changeset_id: 1
+next_epic_id: 6
+next_sprint_id: 3
+next_story_id: 32
+prefix: EX
+projects: []
+repo: ''
