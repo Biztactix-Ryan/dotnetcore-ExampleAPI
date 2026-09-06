@@ -348,3 +348,9 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Runner-local Claude Code session state (agents/skills are installed per-runner)
+.claude/
+
+# Runner-local MCP server config (points at localhost endpoints)
+.mcp.json
